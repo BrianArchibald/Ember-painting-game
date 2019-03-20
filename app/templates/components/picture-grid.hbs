@@ -1,1 +1,9 @@
-{{yield}}
+<table class="w-full picture">
+    {{#each (range 0 10) as |row|}}
+        <tr>
+            {{#each (range 0 10) as |cell|}}
+                <td class="border border-grey-darkest w-1/10 bg-yellow"></td>
+            {{/each}}
+        </tr>
+    {{/each}}
+</table>
