@@ -1,8 +1,11 @@
 <table class="w-full picture">
-    {{#each (range 0 10) as |row|}}
+    {{#each (chunk 10@picture.cells) as |row|}}
         <tr>
             {{#each (range 0 10) as |cell|}}
-                <td class="border border-grey-darkest w-1/10 bg-yellow"></td>
+                <td class="border border-grey-darkest w-1/10 {{concat 'bg-' cell.color}}"
+                    onclick={{action 'updateCellColor' cell}}
+                    onmousemove={{action 'mouseMove' cell}}
+                ></td>
             {{/each}}
         </tr>
     {{/each}}
